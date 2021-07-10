@@ -42,52 +42,78 @@
       <div class="numbers">
         <button
           class="zero"
-          @[event]="resultEl">
+          @[event]="zeroEl">
           0
         </button>
-        <button class="one">
+        <button
+          class="one"
+          @[event]="oneEl">
           1
         </button>
-        <button class="two">
+        <button
+          class="two"
+          @[event]="twoEl">
           2
         </button>
-        <button class="multiple">
+        <button
+          class="multiple"
+          @[event]="multiEl">
           *
         </button>
-        <button class="three">
+        <button
+          class="three"
+          @[event]="threeEl">
           3
         </button>
-        <button class="four">
+        <button
+          class="four"
+          @[event]="fourEl">
           4
         </button>
-        <button class="five">
+        <button
+          class="five"
+          @[event]="fiveEl">
           5
         </button>
-        <button class="divide">
+        <button
+          class="divide"
+          @[event]="divideEl">
           /
         </button>
-        <button class="six">
+        <button
+          class="six"
+          @[event]="sixEl">
           6
         </button>
-        <button class="seven">
+        <button
+          class="seven"
+          @[event]="sevEl">
           7
         </button>
-        <button class="eight">
+        <button
+          class="eight"
+          @[event]="eightEl">
           8
         </button>
-        <button class="plus">
+        <button
+          class="plus"
+          @[event]="additionEl">
           +
         </button>
         <button class="back">
           back
         </button>
-        <button class="nine">
+        <button
+          class="nine"
+          @[event]="nineEl">
           9
         </button>
         <button class="reset">
           reset
         </button>
-        <button class="substract">
+        <button
+          class="subtract"
+          @[event]="subtractEl">
           -
         </button>
         <button
@@ -104,7 +130,7 @@
 // import HelloWorld from '~/components/HelloWorld'
 
 let num = [0,1,2,3,4,5,6,7,8,9];
-
+let sign = ['+','-','*','/']
 export default {
   
   data() {
@@ -118,14 +144,7 @@ export default {
       signP: '+',
       signM: '-',
       msg1: 'calcuator',
-      zero: num[0],
-      one: num[1],
-      two: num[2],
-      three: num[3],
-      four: num[4],
-      five: num[5],
     }
-    
   },
   methods: {
     handler() {
@@ -136,10 +155,6 @@ export default {
     },
     countmEl() {
       this.count -= 1
-    },
-    numberEl() {
-      let num = [0,1,2,3,4,5,6,7,8,9];
-      return num;
     },
     addEl() {
       let num = [0,1,2,3,4,5,6,7,8,9]  
@@ -174,10 +189,70 @@ export default {
       console.log(this.result);
     },
     resultEl() {
-      return this.result;
+      return this.result,
+      console.log(this.result);
     },
+    zeroEl() {
+      return num[0],
+      console.log(num[0])
+    },
+    oneEl() {
+      return num[1],
+      console.log(num[1])
+    },
+    twoEl() {
+      return num[2],
+      console.log(num[2])
+    },
+    threeEl() {
+      return num[3],
+      console.log(num[3])
+    },
+    fourEl() {
+      return num[4],
+      console.log(num[4])
+    },
+    fiveEl() {
+      return num[5],
+      console.log(num[5])
+    },
+    sixEl() {
+      return num[6],
+      console.log(num[6])
+    },
+    sevEl() {
+      return num[7],
+      console.log(num[7])
+    },
+    eightEl() {
+      return num[8],
+      console.log(num[8])
+    },
+    nineEl() {
+      return num[9],
+      console.log(num[9])
+    },
+    multiEl() {
+      return sign[2],
+      console.log(sign[2])
+    },
+    additionEl() {
+      return sign[0],
+      console.log(sign[0])
+    },
+    subtractEl() {
+      return sign[1],
+      console.log(sign[1])
+    },
+    divideEl() {
+      return sign[3],
+      console.log(sign[3])
+    },
+
+
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
