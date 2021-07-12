@@ -13,19 +13,19 @@ class Calculator {
   }    
 
   appendNumber(number) {
-      this.displayContent += number
+      this.displayCont += number
   }
 
   appendOperator(operator) {            
-      this.displayContent += operator
+      this.displayCont += operator
   }
 
   updateDisplay() {
-      this.displayElement.value = this.displayContent
+      this.displayElement.value = this.displayCont
   }
 
   clear() {
-      this.displayContent = ''
+      this.displayCont = ''
       this.displayElement.value = 0
   }
 }
@@ -39,11 +39,14 @@ buttons.forEach(button => {
               calculator.appendOperator(button.innerText)
               calculator.updateDisplay()
               break
-          case 'ac':
+          case 'back':
               calculator.clear()
               break
-          case 'equals':
-              console.log('equals')
+          case 'reset':
+              calculator.clear()
+              break
+          case 'enter':
+              console.log('enter')
               break
           default:
               calculator.appendNumber(button.innerText)
