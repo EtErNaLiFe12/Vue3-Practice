@@ -37,8 +37,7 @@
       <span>{{ msg1 }}</span>
       <input
         :id="'rv'"
-        type="text"
-        placeholder="입력하세요" />
+        type="text" />
       <div class="numbers">
         <button
           class="zero"
@@ -57,6 +56,7 @@
         </button>
         <button
           class="multiple"
+          data-type="operator"
           @[event]="multiEl">
           *
         </button>
@@ -77,6 +77,7 @@
         </button>
         <button
           class="divide"
+          data-type="operator"
           @[event]="divideEl">
           /
         </button>
@@ -97,10 +98,13 @@
         </button>
         <button
           class="plus"
+          data-type="operator"
           @[event]="additionEl">
           +
         </button>
-        <button class="back">
+        <button
+          data-type="back"
+          class="back">
           back
         </button>
         <button
@@ -108,16 +112,20 @@
           @[event]="nineEl">
           9
         </button>
-        <button class="reset">
+        <button
+          class="reset"
+          data-type="reset">
           reset
         </button>
         <button
           class="subtract"
+          data-type="operator"
           @[event]="subtractEl">
           -
         </button>
         <button
           class="enter"
+          data-type="enter"
           @[event]="resultEl">
           enter
         </button>
@@ -189,67 +197,64 @@ export default {
       console.log(this.result);
     },
     resultEl() {
-      return this.result,
-      console.log(this.result);
+      return this.result;
     },
     zeroEl() {
-      return num[0],
-      console.log(num[0])
+      return this.result = num[0],
+      console.log(this.result)
     },
     oneEl() {
-      return num[1],
+      return this.result = num[1],
       console.log(num[1])
     },
     twoEl() {
-      return num[2],
+      return this.result = num[2],
       console.log(num[2])
     },
     threeEl() {
-      return num[3],
+      return this.result = num[3],
       console.log(num[3])
     },
     fourEl() {
-      return num[4],
+      return this.result = num[4],
       console.log(num[4])
     },
     fiveEl() {
-      return num[5],
+      return this.result = num[5],
       console.log(num[5])
     },
     sixEl() {
-      return num[6],
+      return this.result = num[6],
       console.log(num[6])
     },
     sevEl() {
-      return num[7],
+      return this.result = num[7],
       console.log(num[7])
     },
     eightEl() {
-      return num[8],
+      return this.result = num[8],
       console.log(num[8])
     },
     nineEl() {
-      return num[9],
+      return this.result = num[9],
       console.log(num[9])
     },
     multiEl() {
-      return sign[2],
+      return this.result = sign[2],
       console.log(sign[2])
     },
     additionEl() {
-      return sign[0],
+      return this.result = sign[0],
       console.log(sign[0])
     },
     subtractEl() {
-      return sign[1],
+      return this.result = sign[1],
       console.log(sign[1])
     },
     divideEl() {
-      return sign[3],
+      return this.result = sign[3],
       console.log(sign[3])
     },
-
-
   }
 }
 
@@ -352,10 +357,11 @@ $h: 100px;
     top: 0;
     left: 50%;
     transform: translate(-50%);
-      input {
+      #rv {
         position: absolute;
         left: 50%;
         transform: translate(-50%);
+        background-color: #fff;
         width: 250px;
         height: 30px;
         text-align: center;
