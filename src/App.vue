@@ -10,28 +10,6 @@
       </div>
     </div>
 
-    <!-- btn-container part 
-    <div
-      :[attr]="'btn-con no-drag'">
-      숫자카운트={{ count }}
-    </div>
-
-    <div class="btn_button">
-       btn-plus 
-      <button
-        :[attr]="plus"
-        @[event]="countEl">
-        {{ signP }}
-      </button>
-       btn-minus 
-      <button
-        :[attr]="minus"
-        @[event]="countmEl">
-        {{ signM }}
-      </button>
-    </div>
-  </div>-->
-
     <div class="middle-container">
       <div class="cal">
         <span>{{ msg1 }}</span>
@@ -111,8 +89,7 @@
           </button>
           <button
             class="enter"
-            :[typee]="'enter'"
-            @[event]="resultEl">
+            :[typee]="'enter'">
             enter
           </button>
         </div>
@@ -131,11 +108,6 @@ export default {
       attr: 'class',
       event: 'click',
       msg: 'Vue.js Calculator',
-      // plus: 'btn-plus',
-      // minus: 'btn-minus',
-      // count: 1,
-      // signP: '+',
-      // signM: '-',
       msg1: 'calcuator',
       typee: 'data-type'
     }
@@ -150,9 +122,6 @@ export default {
     // countmEl() {
     //   this.count -= 1
     // },
-    resultEl() {
-      return this.result;
-    },
   }
 }
 
@@ -190,54 +159,7 @@ $color6:#bbbbbb;
           color: $color5;
           text-transform: uppercase;
         }
-    }
-    // .btn-con {
-    //   position: absolute;
-    //   width: 1000px;
-    //   height: 50px;
-    //   top: 60%;
-    //   left: 50%;
-    //   transform: translate(-50%,-50%);
-    //   text-align: center;
-    //   line-height: 50px;
-    //   color: $color2;
-    //   font-size: 30px;
-    //   font-weight: 700;
-    // }
-    // .no-drag {
-    //   -ms-user-select: none; 
-    //   -moz-user-select: none; 
-    //   -webkit-user-select: none; 
-    //   -khtml-user-select: none; 
-    //   user-select:none;
-    // }
-    // .btn_button {
-    //   position: absolute;
-    //   bottom: 10px;
-    //   left: 50%;
-    //   transform: translate(-50%);
-    //     .btn-plus {        
-    //       bottom: 10px;
-    //       width: 100px;
-    //       height: 50px;
-    //       border: 0;
-    //       border-radius: 5px;
-    //       background-color: $color2;
-    //       font-size: 30px;
-    //       margin: 10px;
-    //     }
-    //     .btn-minus {
-    //       bottom: 10px;
-    //       width: 100px;
-    //       height: 50px;
-    //       border: 0;
-    //       border-radius: 5px;
-    //       background-color: $color1;
-    //       font-size: 30px;
-    //       margin: 10px;
-    //     }
-    // }
-    
+    } 
 }
 
 $h: 100px;
