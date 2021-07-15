@@ -3,96 +3,96 @@
   <div class="top-container">
     <!-- main-con part -->
     <div
-      @[event]="handler"
       :[attr]="'main-con no-drag'">
-      <div class="text">
+      <div :[attr]="'text'">
         {{ msg }}
       </div>
     </div>
-
-    <div class="middle-container">
-      <div class="cal">
-        <span>{{ msg1 }}</span>
-        <input
-          :id="'rv'"
-          type="text" />
-        <div class="numbers">
-          <button
-            class="'zero'">
-            0
-          </button>
-          <button
-            class="one">
-            1
-          </button>
-          <button
-            class="two">
-            2
-          </button>
-          <button
-            class="multiple"
-            :[typee]="'operator'">
-            *
-          </button>
-          <button
-            class="three">
-            3
-          </button>
-          <button
-            class="four">
-            4
-          </button>
-          <button
-            class="five">
-            5
-          </button>
-          <button
-            class="divide"
-            :[typee]="'operator'">
-            /
-          </button>
-          <button
-            class="six">
-            6
-          </button>
-          <button
-            class="seven">
-            7
-          </button>
-          <button
-            class="eight">
-            8
-          </button>
-          <button
-            class="plus"
-            :[typee]="'operator'">
-            +
-          </button>
-          <button
-            :[typee]="'back'"
-            class="back">
-            back
-          </button>
-          <button
-            class="nine">
-            9
-          </button>
-          <button
-            class="reset"
-            :[typee]="'reset'">
-            reset
-          </button>
-          <button
-            class="subtract"
-            :[typee]="'operator'">
-            -
-          </button>
-          <button
-            class="enter"
-            :[typee]="'enter'">
-            enter
-          </button>
-        </div>
+    <div :[attr]="'bar'"></div>
+    <div :[attr]="'side_bar'"></div>
+  </div>
+  <div class="middle-container">
+    <div class="cal">
+      <span>{{ msg1 }}</span>
+      <input
+        :id="'rv'"
+        type="text" />
+      <div class="numbers">
+        <button
+          class="'zero'">
+          0
+        </button>
+        <button
+          class="one">
+          1
+        </button>
+        <button
+          class="two">
+          2
+        </button>
+        <button
+          class="multiple"
+          :[typee]="'operator'">
+          *
+        </button>
+        <button
+          class="three">
+          3
+        </button>
+        <button
+          class="four">
+          4
+        </button>
+        <button
+          class="five">
+          5
+        </button>
+        <button
+          class="divide"
+          :[typee]="'operator'">
+          /
+        </button>
+        <button
+          class="six">
+          6
+        </button>
+        <button
+          class="seven">
+          7
+        </button>
+        <button
+          class="eight">
+          8
+        </button>
+        <button
+          class="plus"
+          :[typee]="'operator'">
+          +
+        </button>
+        <button
+          :[typee]="'back'"
+          class="back">
+          back
+        </button>
+        <button
+          class="nine">
+          9
+        </button>
+        <button
+          class="reset"
+          :[typee]="'reset'">
+          reset
+        </button>
+        <button
+          class="subtract"
+          :[typee]="'operator'">
+          -
+        </button>
+        <button
+          class="enter"
+          :[typee]="'enter'">
+          enter
+        </button>
       </div>
     </div>
   </div>
@@ -116,6 +116,9 @@ export default {
     handler() {
       this.msg += '!'
     },
+    classAdd() {
+      this.attr += 'display'
+    }
     // countEl() {
     //   this.count += 1
     // },
@@ -159,14 +162,37 @@ $color6:#bbbbbb;
           color: $color5;
           text-transform: uppercase;
         }
-    } 
+    }
+    .bar {
+      position: relative;
+      top: 25px;
+      left: 25px;
+      z-index: 2;      
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 20%;
+      background-color: rgba(231, 25, 104, 0.849);
+    }
+    .side_bar {
+      position: fixed;
+      top: 0;
+      left: 0;  
+      width: 1900px;
+      height: 900px;
+      background-color: rgba(240, 84, 84, 0.3);
+      transform: translateY(-900px);
+      transition: 1s;
+    }
+    .side_bar.display {
+      transform: translateY(0);
+    }
 }
 
 $h: 100px;
 
 .middle-container {
   position: relative;
-  top: 320px;
   width: 320px;
   height: 400px;
   margin: 0 auto;
