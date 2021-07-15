@@ -86,3 +86,12 @@ let a = '안녕 내 나이는'
 let b = '10 + 19 * 10 * 0.1'
 let c = '살이야'
 console.log(a + eval(b) + c);
+
+
+// 클래스 토글 이벤트 (js)
+const bar = document.querySelector('.bar');
+const sBar = document.querySelector('.side_bar');
+
+bar.addEventListener('click', () => {
+  sBar.classList.toggle('display');
+}) 
