@@ -4,18 +4,27 @@
     <!-- main-con part -->
     <div
       :[attr]="'main-con no-drag'">
-      <div :[attr]="'text'">
+      <div
+        class="text"
+        :class="{txtCol : isbgOn}">
         {{ msg }}
       </div>
     </div>
-    <div :[attr]="'bar'"></div>
-    <div :[attr]="'side_bar'"></div>
+    <div
+      class="bar"
+      :class="{colorChg : isbgOn}"
+      @[event]="update"></div>
+    <div
+      class="side_bar"
+      :class="{display : isbgOn}"></div>
   </div>
-  <div class="middle-container">
+  <div
+    class="middle-container"
+    :class="{colorChg : isbgOn}">
     <div class="cal">
       <span>{{ msg1 }}</span>
       <input
-        :id="'rv'"
+        id="rv"
         type="text" />
       <div class="numbers">
         <button
@@ -105,6 +114,7 @@ export default {
   
   data() {
     return {
+      isbgOn: false,
       attr: 'class',
       event: 'click',
       msg: 'Vue.js Calculator',
@@ -116,8 +126,8 @@ export default {
     handler() {
       this.msg += '!'
     },
-    classAdd() {
-      this.attr += 'display'
+    update() {
+      this.isbgOn = !this.isbgOn;
     }
     // countEl() {
     //   this.count += 1
@@ -132,7 +142,7 @@ export default {
 
 <style lang="scss" scoped>
 
-$color1: #bae;
+$color1: #3375f0;
 $color2: #fb5849;
 $color3: #fff;
 $color4: #000;
@@ -151,6 +161,7 @@ $color6:#bbbbbb;
       left:0;
       right: 0;
       margin: 0 auto;
+      z-index: 3;
         .text {
           margin: 0 auto;
           display: flex;
@@ -162,6 +173,10 @@ $color6:#bbbbbb;
           color: $color5;
           text-transform: uppercase;
         }
+        .text.txtCol {
+          color: $color1;
+         
+        }
     }
     .bar {
       position: relative;
@@ -172,7 +187,10 @@ $color6:#bbbbbb;
       width: 30px;
       height: 30px;
       border-radius: 20%;
-      background-color: rgba(231, 25, 104, 0.849);
+      background-color: $color2;
+    }
+    .bar.colorChg {
+      background-color: $color1;
     }
     .side_bar {
       position: fixed;
@@ -219,7 +237,7 @@ $h: 100px;
         border-radius: 5px;
         font-size: 16px;
         font-weight: 700;
-        border: 1px solid $color5;
+        border: 1px solid $color3;
         color: #535050;
         user-select:none;
       }
@@ -249,7 +267,7 @@ $h: 100px;
             width: 55px;
             height: 35px;
             color: #535050;
-            border: 1px solid $color5; 
+            border: 1px solid $color3; 
             box-sizing: border-box;
             border-radius: 5px;
             font-size: 15px;
@@ -267,5 +285,9 @@ $h: 100px;
       }
   }
 
+}
+
+.middle-container.colorChg {
+  background-color: $color1;
 }
 </style>
