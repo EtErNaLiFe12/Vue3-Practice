@@ -89,9 +89,9 @@ console.log(a + eval(b) + c);
 
 
 // 클래스 토글 이벤트 (js)
-const bar = document.querySelector('.bar');
-const sBar = document.querySelector('.side_bar');
+// const bar = document.querySelector('.bar');
+// const sBar = document.querySelector('.side_bar');
 
-bar.addEventListener('click', () => {
-  sBar.classList.toggle('display');
-}) 
+// bar.addEventListener('click', () => {
+//   sBar.classList.toggle('display');
+// }) 
