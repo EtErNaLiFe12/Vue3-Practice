@@ -105,13 +105,16 @@
       </div>
     </div>
   </div>
+  <VueComp />
 </template>
 
 <script>
-// import HelloWorld from '~/components/HelloWorld'
+import VueComp from '~/components/vuecomp'
 
 export default {
-  
+  components: {
+    VueComp
+  },
   data() {
     return {
       isbgOn: false,
