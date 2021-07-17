@@ -4,3 +4,12 @@
 
  - vue3 framework 사용
  - vue3 component unit design 
+
+
+## Vue.js directive
+
+### v-bind
+ - :[attr]="'main-con no-drag'"
+ - :class="{txtCol : isbgOn}"
+### v-on
+ - @[event]="update"
