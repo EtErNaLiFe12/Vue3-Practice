@@ -43,9 +43,16 @@
  - @[event]="update(), addEl()" <!-- 클릭이벤트 1개이상시 -->
 
 ---
-### v-if(v-if 디렉티브는 표현식 seen 값의 참, 거짓 여부를 바탕으로 엘리먼트를 삽입하거나 제거합니다.)
+### v-if & v-show
  
  - v-if="seen"
+ - v-if 조건을 여러개에 묶을시에는 `<template>` element를 사용.
+ - v-show="seen"
+ - v-show는 `<template>` element를 지원하지 않음.
 
----
+ |name|description|`<template>` 지원|
+ |:----:|:-----------:|:------:|
+ |v-if|v-if 디렉티브는 조건부의 값의 참, 거짓 여부를 바탕으로 엘리먼트를 렌더링하거나 안합니다.|Y|
+ |v-show|v-show 디렉티브는 조건부의 값의 참, 거짓 여부를 떠나 항상 DOM에는 렌더링 되고 display 속성만을 전환합니다.|N|
+
 
